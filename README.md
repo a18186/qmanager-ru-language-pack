@@ -49,7 +49,6 @@ adb shell systemctl restart lighttpd
 
 Или через веб-интерфейс: **System Settings → Languages → значок корзины**.
 
-Или через веб-интерфейс: **System Settings → Languages → значок корзины**.
 
 ## Проверка
 adb shell jq empty /usrdata/qmanager/www/locales-packs/ru/common.json
