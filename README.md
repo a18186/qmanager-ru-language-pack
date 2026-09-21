@@ -16,10 +16,21 @@
 5. Откройте QManager → **System Settings → Languages** → **Русский**.
 
 ## Установка (вручную, через ADB)
+
+Если install.bat не работает — установите вручную:
+
+```
 adb push files /tmp/ru-langpack/files
 adb push install.sh /tmp/ru-langpack/install.sh
 adb shell sed -i "s/\r$//" /tmp/ru-langpack/install.sh
 adb shell sh /tmp/ru-langpack/install.sh
+```
+
+Затем перезапустите веб-сервер:
+
+```
+adb shell systemctl restart lighttpd
+```
 
 
 ## Требования
@@ -29,10 +40,14 @@ adb shell sh /tmp/ru-langpack/install.sh
 - ADB на ПК (в PATH)
 
 ## Удаление
+
+```
 adb shell rm -rf /usrdata/qmanager/locales-packs/ru
 adb shell rm -rf /usrdata/qmanager/www/locales-packs/ru
 adb shell systemctl restart lighttpd
+```
 
+Или через веб-интерфейс: **System Settings → Languages → значок корзины**.
 
 Или через веб-интерфейс: **System Settings → Languages → значок корзины**.
 
